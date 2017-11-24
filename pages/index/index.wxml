@@ -1,2 +1,27 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<swiper class="section hero white">
+    <block wx:for="{{slides}}" wx:for-item="slide"  wx:key = "id">
+    <swiper-item>
+        <image src="{{slide.image}}" mode="aspectFill"/>
+        <view class="content centered">
+            <view class="sub-header">
+                {{slide.sub_header}}
+            </view>
+            <view class="header">
+                {{slide.header}}
+            </view>
+            <view class="description">
+                {{slide.description}}
+            </view>
+            <view class="action">
+                <button class="button" bindtap = "testDrive">
+                    预约试驾
+                </button>
+                <button class="button primary" bindtap = "readMore" data-id="{{slide.id}}">
+                    了解更多
+                </button>
+            </view>
+        </view>
+    </swiper-item>
+    </block>
+</swiper>

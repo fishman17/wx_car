@@ -9,3 +9,14 @@
 @import 'styles/spec.wxss';
 @import 'styles/action.wxss';
 @import 'styles/story.wxss';
+
+page{
+    background: #f8f8f8;
+
+}
+.section{
+    /* rem rpx % vh vw 相对于viewport */
+    /* 沾满一屏 */
+    height: 100vh;
+    background: #333333;
+}

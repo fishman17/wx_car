@@ -1,3 +1,6 @@
+import testDrive from '../../modules/test-drive';
+console.log(testDrive);
+const app = getApp();
 // pages/index/index.js
 Page({
 
@@ -5,16 +8,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    slides: null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
-  },
+  testDrive,
 
+  readMore : (event)=>{
+    console.log(event);
+    let id  = event.target.dataset.id;
+    wx.navigateTo({
+      // queryString 查询字符串 ?
+      url: `/pages/vehicles/show?id=${id}&qq=${12345}`,
+    });
+  },
+  onLoad: function (options) {
+    // 全局的数据 globalData 
+
+    this.setData({
+      slides: app.globalData.slides,
+
+    })
+  },
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
